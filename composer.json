@@ -1,5 +1,5 @@
 {
-    "name": "dees040/pusher-push-notifications",
+    "name": "ventureapp/pusher-push-notifications",
     "description": "Pusher native Push Notifications driver.",
     "keywords": [
         "pusher-push-notifications",
@@ -33,15 +33,15 @@
     ],
     "require": {
         "php": ">=5.6.4",
-        "illuminate/events": "5.4.*",
-        "illuminate/notifications": "5.4.*",
-        "illuminate/queue": "5.4.*",
-        "illuminate/support": "5.4.*",
-        "pusher/pusher-php-server": "2.6.*"
+        "illuminate/events": "5.5.*",
+        "illuminate/notifications": "5.5.*",
+        "illuminate/queue": "5.5.*",
+        "illuminate/support": "5.5.*",
+        "pusher/pusher-php-server": "3.0.*"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.5",
-        "phpunit/phpunit": "4.*"
+        "phpunit/phpunit": "6.*"
     },
     "autoload": {
         "psr-4": {
