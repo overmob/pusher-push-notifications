@@ -3,7 +3,7 @@
 namespace NotificationChannels\PusherPushNotifications;
 
 use Illuminate\Support\ServiceProvider;
-use Pusher;
+use Pusher\Pusher;
 
 class PusherPushNotificationsServiceProvider extends ServiceProvider
 {
@@ -20,7 +20,8 @@ class PusherPushNotificationsServiceProvider extends ServiceProvider
                 return new Pusher(
                     $pusherConfig['key'],
                     $pusherConfig['secret'],
-                    $pusherConfig['app_id']
+                    $pusherConfig['app_id'],
+                    $pusherConfig['options']
                 );
             });
     }
