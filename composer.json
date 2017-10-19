@@ -1,5 +1,5 @@
 {
-    "name": "ventureapp/pusher-push-notifications",
+    "name": "overmob/pusher-push-notifications",
     "description": "Pusher native Push Notifications driver.",
     "keywords": [
         "pusher-push-notifications",
