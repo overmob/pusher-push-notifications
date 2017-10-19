@@ -30,7 +30,7 @@ This package makes it easy to send [Pusher push notifications](https://pusher.co
 You can install the package via composer:
 
 ``` bash
-composer require dees040/pusher-push-notifications:dev-master
+composer require overmob/pusher-push-notifications:dev-master
 ```
 
 You must install the service provider:
