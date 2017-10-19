@@ -1,4 +1,4 @@
-# Pusher push notifications channel for Laravel 5.4
+# Pusher push notifications channel for Laravel 5.5
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/pusher-push-notifications.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pusher-push-notifications)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -33,7 +33,7 @@ You can install the package via composer:
 composer require overmob/pusher-push-notifications:dev-master
 ```
 
-You must install the service provider:
+You could install the service provider:
 
 ```php
 // config/app.php
@@ -75,7 +75,9 @@ class AccountApproved extends Notification
     public function toPushNotification($notifiable)
     {
         return PusherMessage::create()
-            ->iOS()
+            ->android()
+            ->title('')
+            ->icon('')
             ->badge(1)
             ->sound('success')
             ->body("Your {$notifiable->service} account was approved!");
