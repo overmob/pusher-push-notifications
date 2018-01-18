@@ -43,6 +43,13 @@ class PusherMessage
     protected $icon;
 
     /**
+     * The tag (Android).
+     *
+     * @var string
+     */
+    protected $tag;
+
+    /**
      * The number to display next to the push notification (iOS).
      *
      * @var int
@@ -62,6 +69,11 @@ class PusherMessage
      * @var
      */
     protected $extraMessage;
+
+    /**
+     * @var
+     */
+    protected $background;
 
     /**
      * @param string $body
@@ -209,6 +221,17 @@ class PusherMessage
     }
 
     /**
+     * @param bool $value
+     * @return $this
+     */
+    public function background($value)
+    {
+        $this->background = $value;
+
+        return $this;
+    }
+
+    /**
      * Set the message icon (Android).
      *
      * @param string $value
@@ -232,6 +255,20 @@ class PusherMessage
     public function badge($value)
     {
         $this->badge = (int) $value;
+
+        return $this;
+    }
+
+    /**
+     * Set the tag (Android).
+     *
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function tag($tag)
+    {
+        $this->tag = $tag;
 
         return $this;
     }
@@ -293,6 +330,9 @@ class PusherMessage
      */
     public function toAndroid()
     {
+        $mode = ($this->background) ? 'data' : 'notification';
+
+        /*
         $message = [
             'gcm' => [
                 'notification' => [
@@ -300,6 +340,19 @@ class PusherMessage
                     'body' => $this->body,
                     'sound' => $this->sound,
                     'icon' => $this->icon,
+                ],
+            ],
+        ];
+        */
+
+        $message = [
+            'fcm' => [
+                $mode => [
+                    'title' => $this->title,
+                    'body' => $this->body,
+                    'sound' => $this->sound,
+                    'icon' => $this->icon,
+                    'tag' => $this->tag
                 ],
             ],
         ];
